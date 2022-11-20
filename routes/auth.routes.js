@@ -15,7 +15,7 @@ const User = require('../models/user.model');
 const SALT_ROUNDS = 10;
 
 // cadastro de usuário
-router.post('/signup', async (req, res, next) => {
+router.post('/cadastro', async (req, res, next) => {
   const { username, email, password } = req.body;
   try {
     if (!username || !email || !password) {
