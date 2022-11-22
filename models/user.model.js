@@ -20,12 +20,14 @@ const userSchema = new Schema({
         match: [/^\S+@\S+\.\S+$/, 'insira formato de email válido.']
     },
 
-    passwordHash: {
+    password: {
         type: String,
         required: [true, 'campo passwordHash é obrigatório'],
     },
 
-    profileImageUrl: String,
+    profileImageUrl:{
+       type: String
+    } 
 
 }, { timestamps: true });
 

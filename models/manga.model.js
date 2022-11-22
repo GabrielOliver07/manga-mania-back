@@ -17,43 +17,43 @@ const mangaSchema = new Schema({
         type: String,
         trim: true,
         required: [true, 'campo mangadescription é obrigatório!'],
-        unique: true,
     },
 
-    publicationyear: {
+    publicationYear: {
         type: String,
         trim: true,
         required: [true, 'campo publicationyear é obrigatório!'],
-        unique: true,
     },
 
     status: {
         type: String,
         trim: true,
-        required: [true, 'campo status é obrigatório(ex:completo, publicando, em hiato)!'],
-        unique: true,
+        required: [true, 'campo status é obrigatório(ex:Shonen,Kodomo,Shoujo e Seinen)!'],
+    },
+
+    category:{
+        type: String,
+        trim: true,
+        required: [true, 'campo status é categoria(ex:completo, publicando, em hiato)!'],
     },
    
     author: {
         type: String,
         trim: true,
         required: [true, 'campo author é obrigatório!'],
-        unique: true,
     },
 
-    numberofchapters: {
-        type: String,
-        trim: true,
+    numberOfChapters: {
+        type: Number,
         required: [true, 'campo numberofchapters é obrigatório!'],
-        unique: true,
     },
 
-    profileImageUrl:{
+    coverImageUrl:{
         type: String,
-        required: [true, 'campo profileImageUrl é obrigatório!'],
+        required: [true, 'campo coverImageUrl é obrigatório!'],
     } 
 
 
 }, { timestamps: true });
 
-module.exports = model('Mangá', mangaSchema);
+module.exports = model('Manga', mangaSchema);

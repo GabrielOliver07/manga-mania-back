@@ -8,21 +8,19 @@ const commentSchema = new Schema({
         type: String,
         trim: true,
         required: [true, 'campo comment é obrigatório!'],
-        unique: true,
     },
 
     userId: {
-        type: String,
-        trim: true,
-        required: [true, 'campo username é obrigatório!'],
-        unique: true,
+        type:Schema.Types.ObjectId,
+        ref:"User",
+        required: true,
     },
 
-    mangaId:{
-
-    required: [true, 'campo username é obrigatório!'],    
-    }
-
+    mangaId: {
+        type: Schema.Types.ObjectId,
+        ref:"Manga",
+        required: true,
+    },
 
     
 

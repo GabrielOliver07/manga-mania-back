@@ -39,7 +39,7 @@ router.post('/cadastro', async (req, res, next) => {
     const userFromDB = await User.create({
       username,
       email,
-      passwordHash: hash,
+      password: hash,
     });
 
     res.status(201).json(userFromDB);
@@ -74,7 +74,7 @@ router.post('/login', async (req, res, next) => {
     }
 
     // comparo a senha com o hash q estava no banco de dados
-    const verify = bcrypt.compareSync(password, userFromDB.passwordHash);
+    const verify = bcrypt.compareSync(password, userFromDB.password);
 
     // caso senha não valide o hash, respondo com status 401, não autorizado.
     if (!verify) {
